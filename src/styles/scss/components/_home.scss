@@ -1,0 +1,43 @@
+@use '../util/mixins' as *;
+@use '../global/colors' as *;
+@use '../global/typography' as *;
+
+.home {
+    @extend %containerDesign;
+    position: relative;
+
+    &__shape {
+        @extend %absoluteCenter;
+        z-index: 1;
+        width: 80rem;
+
+        @media (max-width: 768px) {
+            width: 20rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        height: 50vh;
+        overflow: visible;
+    }
+}
+
+.heading {
+    @include customFlex(column, center, center);
+    @extend %absoluteCenter;
+    z-index: 2;
+    mix-blend-mode: exclusion;
+
+    &__h1 {
+        @include headingFont(16rem);
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 17rem;
+        letter-spacing: .2rem;
+
+        @media (max-width: 768px) {
+            font-size: 4.8rem;
+            letter-spacing: .1rem;
+        }
+    }
+}

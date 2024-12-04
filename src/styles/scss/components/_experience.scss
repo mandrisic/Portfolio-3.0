@@ -1,0 +1,186 @@
+@use '../global/typography' as *;
+@use '../global/colors' as *;
+@use '../util/mixins' as *;
+
+.experience {
+    @extend %containerDesign;
+    @extend %flexCenter;
+    height: 70vh;
+    overflow: visible;
+
+    h1 {
+        @include headingFont(6rem);
+
+        @media (max-width: 768px) {
+            font-size: 3.5rem;
+        }
+    }
+
+    .dots__container {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+
+        .dot {
+            position: absolute;
+            width: 6rem;
+            height: 6rem;
+            background: rgb(245,140,181);
+            background: linear-gradient(128deg, $pink 0%, $green 100%);
+            border-radius: 50%;
+            padding: 2rem;
+            cursor: pointer;
+            @extend %flexCenter;
+            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: $white;
+
+            @media (max-width: 768px) {
+              width: 3rem;
+              height: 3rem;
+          }
+
+            &:hover, &.active {
+                transform: scale(1.5);
+                width: 18rem;
+                height: 18rem;
+                z-index: 3;
+
+                @media (max-width: 768px) {
+                  width: 12rem;
+                  height: 12rem;
+              }
+            }
+
+            &__text {
+                display: none;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                font-size: 1.2rem;
+                font-family: $text-font;
+
+                @media (max-width: 768px) {
+                  font-size: .8rem;
+              }
+
+            }
+
+            &:hover .dot__text {
+                display: block;
+                opacity: 1;
+              }
+          }
+      }
+}
+  
+  #dot-1 {
+    top: 40%;
+    left: 2%;
+
+    @media (max-width: 768px) {
+      top: 2%;
+      left: 16%;
+    }
+  }
+  
+  #dot-2 {
+    top: 30%;
+    left: 13%;
+
+    @media (max-width: 768px) {
+      top: 8%;
+      left: 38%;
+    }
+  }
+  
+  #dot-3 {
+    top: 60%;
+    left: 21%;
+
+    @media (max-width: 768px) {
+      top: 17%;
+      left: 60%;
+    }
+  }
+  
+  #dot-4 {
+    top: 40%;
+    left: 28%;
+
+    @media (max-width: 768px) {
+      top: 28%;
+      left: 48%;
+    }
+  }
+  
+  #dot-5 {
+    top: 22%;
+    left: 36%;
+
+    @media (max-width: 768px) {
+      top: 34%;
+      left: 28%;
+    }
+  }
+  
+  #dot-6 {
+    top: 34%;
+    left: 48%;
+
+    @media (max-width: 768px) {
+      top: 44%;
+      left: 10%;
+    }
+  }
+  
+  #dot-7 {
+    top: 62%;
+    left: 58%;
+
+    @media (max-width: 768px) {
+      top: 58%;
+      left: 10%;
+    }
+  }
+  
+  #dot-8 {
+    top: 26%;
+    left: 64%;
+
+    @media (max-width: 768px) {
+      top: 66%;
+      left: 30%;
+    }
+  }
+  
+  #dot-9 {
+    top: 16%;
+    left: 72%;
+
+    @media (max-width: 768px) {
+      top: 55%;
+      left: 40%;
+    }
+  }
+  
+  #dot-10 {
+    top: 40%;
+    left: 78%;
+
+    @media (max-width: 768px) {
+      top: 62%;
+      left: 60%;
+    }
+  }
+  
+  #dot-11 {
+    top: 62%;
+    left: 84%;
+
+    @media (max-width: 768px) {
+      top: 73%;
+      left: 66%;
+    }
+  }

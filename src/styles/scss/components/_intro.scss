@@ -1,0 +1,126 @@
+@use '../global/typography' as *;
+@use '../global/colors' as *;
+@use '../util/mixins' as *;
+
+.intro {
+    position: relative;
+    @extend %containerDesign;
+    
+    @media (max-width: 768px) {
+      height: 80vh;
+    }
+
+    &__container {
+        position: relative;
+        @extend %containerDesign;
+        @include customFlex(column, center, center);
+        overflow-x: hidden;
+
+        @media (max-width: 768px) {
+          overflow: visible;
+          height: 80vh;
+        }
+        
+    }
+
+    &__avatar .avatar-1 {
+      position: absolute;
+      top: 10rem;
+      left: -5rem; 
+
+      @media (max-width: 768px) {
+        width: 50%;
+        top: -5rem;
+        left: 18rem; 
+        z-index: 3;
+      }   
+    }
+
+    &__avatar .avatar-2 {
+      position: absolute;
+      top: 16rem;
+      right: -4rem; 
+      width: 28%;
+      z-index: 2;
+
+      @media (max-width: 768px) {
+        width: 58%;
+        top: -5rem;
+        left: -1rem; 
+        z-index: 3;
+      }   
+    }
+
+    &__title {
+        z-index: 1;
+        @include headingFont(6rem);
+        letter-spacing: .2rem;
+    
+        @media (max-width: 768px) {
+          font-size: 3.5rem;
+        }
+    }
+
+    &__options {
+      @extend %flexCenter;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      .option {
+        color: $grey;
+        font-family: $text-font;
+        border: 1px solid $grey;
+        padding: .5rem 1rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        @media (max-width: 768px) {
+          font-size: 1.4rem;
+        }
+      }
+
+      .active {
+        border: 1px solid $pink;
+        color: $pink;
+      }
+
+      @media (max-width: 768px) {
+        gap: .5rem;
+      }
+    }
+
+    &__paragraph {
+      font-size: 2rem;
+      font-family: $text-font;
+      color: $grey;
+      width: 50%;
+      padding: 2rem;
+      margin: 1rem auto;
+      text-align: justify;
+      word-spacing: .1rem;
+      height: 15rem;
+
+      @media (max-width: 768px) {
+        width: 96%;
+        font-size: 1.6rem;
+      }
+    }
+
+    &__shape {
+      position: absolute;
+      top: 64rem;
+      right: -10rem;
+      width: 50rem;
+
+      @media (max-width: 768px) {
+        top: 34rem;
+        right: 5rem;
+        width: 26rem;
+      }
+  }
+
+  .vibrant {
+    color: $green;
+  }
+}

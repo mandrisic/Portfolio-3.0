@@ -1,0 +1,227 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 7.5rem;
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  background: url("../../../assets/img/black.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.6rem;
+}
+
+/*
+body::before,
+body::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 10%;
+}
+
+body::before {
+  background: #000000;
+  filter: url(#noiseFilter);
+}*/
+img {
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5d5857;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.home {
+  width: 100%;
+  background: url("../../../assets/img/black.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+}
+@media (min-width: 768px) {
+  .heading {
+    height: 100vh;
+  }
+}
+.heading__h1 {
+  font-family: "Rubik Spray Paint";
+  font-size: 4.4rem;
+  text-transform: uppercase;
+  color: #F4F9FF;
+  font-weight: lighter;
+}
+@media (min-width: 768px) {
+  .heading__h1 {
+    font-size: 16rem;
+    letter-spacing: 1.6rem;
+  }
+}
+.heading__img {
+  position: absolute;
+  width: 14.5rem;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .heading__img {
+    width: 36rem;
+  }
+}
+.heading .shadow {
+  position: absolute;
+  z-index: -1;
+  width: 12rem;
+  height: 18rem;
+  background: rgb(142, 195, 255);
+  background: radial-gradient(circle, rgba(215, 237, 243, 0.64) 0%, rgba(142, 195, 255, 0) 100%);
+  border-radius: 60%;
+  filter: blur(50px);
+}
+@media (min-width: 768px) {
+  .heading .shadow {
+    width: 36rem;
+    height: 46rem;
+  }
+}
+
+.intro {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  border: 0.2rem solid white;
+}
+.intro__mini {
+  position: absolute;
+  border: 0.2rem solid white;
+  background-color: #242424;
+  border-radius: 2.4rem;
+  padding: 0.8rem 1.5rem;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.intro__p {
+  color: white;
+  font-size: 1.8rem;
+  font-family: Poppins;
+  margin: auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 2rem;
+}
+.navbar .nav-link {
+  position: relative;
+  text-decoration: none; /* Ukloni defaultni underline */
+  color: #000; /* Defaultna boja linka */
+  font-weight: 500;
+  transition: color 0.5s ease;
+}
+.navbar .nav-link:hover {
+  color: #8EC3FF; /* Boja linka na hover */
+}
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Razmak ispod teksta */
+  left: 0;
+  width: 0;
+  height: 2px; /* Debljina linije */
+  background-color: #8EC3FF; /* Boja underline-a */
+  transition: width 0.3s ease;
+}
+.navbar .nav-link:hover::after, .navbar .nav-link:active::after {
+  width: 100%; /* Proširi liniju preko cijelog linka */
+}
+
+button {
+  border-radius: 3rem !important;
+  font-family: "Poppins";
+}
+
+.vvd {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #8EC3FF;
+  color: #141414;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.vvd:hover {
+  cursor: pointer;
+}
+
+a.nav-link {
+  color: white !important;
+  font-family: "Poppins";
+  font-size: 1.8rem;
+  gap: 2rem;
+}
+a.nav-link:hover {
+  color: #09DE94;
+}
+
+.active {
+  color: #FFFC31;
+}
+
+.bg-body-tertiary {
+  background-color: transparent !important;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  margin-left: auto;
+}
+.navbar-toggler .navbar-toggler-icon {
+  filter: invert(1);
+  width: 2.6rem;
+}
+
+/*# sourceMappingURL=style.css.map */

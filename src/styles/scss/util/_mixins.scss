@@ -1,0 +1,58 @@
+@use '../global/colors' as c;
+@use '../global/typography' as t;
+
+%flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin customFlex ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+%absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin svgShape ($width, $top, $left, $transform){
+    width: $width;
+    top: $top;
+    left: $left;
+    transform: $transform;
+}
+
+@mixin animate($animation,$duration,$method,$times){
+    animation: $animation $duration $method $times;
+}
+
+@mixin fade($fadeIn){
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+}
+
+@mixin headingFont ($fontSize) {
+    font-size: $fontSize;
+    font-family: t.$heading-font;
+    color: c.$white;
+}
+
+%containerDesign {
+    width: 100%;
+    height: 100vh;
+    background-color: c.$night;
+}

@@ -1,0 +1,103 @@
+@use '../global/colors' as *;
+@use '../global/typography' as *;
+@use '../util/mixins' as *;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: 2rem;
+
+    .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: $night;
+        font-weight: 500;
+        transition: color 0.5s ease;
+
+        &:hover {
+            color: $green;
+          }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $green;
+            transition: width 0.3s ease;
+        }
+    
+        &:hover::after, &:active::after {
+            width: 100%;
+        }
+    }
+}
+
+button {
+    border-radius: 3rem !important;
+    font-family: $text-font;
+}
+
+.button-container {
+    @extend %flexCenter;
+  }
+
+.vvd {
+    background-color: $green;
+    color: $night;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    margin: 4rem auto 3rem auto;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 1.6rem;
+        gap: 2rem;
+        padding: 10px 20px;
+        position: absolute;
+        transform: translateY(-50%);
+        right: 2rem;
+        top: 50%;
+        margin: 0;
+      }
+  }
+
+a.nav-link {
+    color: $white !important;
+    font-family: $text-font;
+    font-size: 1.6rem;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 1.8rem;
+        gap: 2rem;
+    }
+}
+
+.bg-body-tertiary {
+    background-color: rgba($night, 0.97) !important;
+
+    @media (min-width: 768px) {
+        background-color: rgba($night, 0.7) !important;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    margin-left: auto;
+
+    .navbar-toggler-icon {
+        filter: invert(1);
+        width: 2.6rem;
+    }
+}
