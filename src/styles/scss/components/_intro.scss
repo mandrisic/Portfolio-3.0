@@ -7,49 +7,76 @@
     @extend %containerDesign;
     
     @media (max-width: 768px) {
-      height: 80vh;
+      height: 90vh;
     }
 
     &__container {
-        position: relative;
-        @extend %containerDesign;
         @include customFlex(column, center, center);
         overflow-x: hidden;
+        height: 100vh;
 
         @media (max-width: 768px) {
           overflow: visible;
-          height: 80vh;
+          height: 70vh;
         }
-        
+    }
+
+    &__avatar {
+      @media (max-width: 768px) {
+        position: relative;
+        @include customFlex(row, space-between, center);
+        height: 45%;
+      }
+    }
+
+    .avatar-1,
+    .avatar-2 {
+      position: absolute;
+      z-index: 2;
+      @media (max-width: 768px) {
+        position: relative;
+        max-width: 300px;
+      }
     }
 
     &__avatar .avatar-1 {
-      position: absolute;
       top: 10rem;
       left: -5rem; 
 
       @media (max-width: 768px) {
-        width: 50%;
-        top: -5rem;
-        left: 18rem; 
-        z-index: 3;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        width: 40vw;
       }   
     }
 
     &__avatar .avatar-2 {
-      position: absolute;
       top: 16rem;
       right: -4rem; 
       width: 28%;
-      z-index: 2;
 
       @media (max-width: 768px) {
-        width: 58%;
-        top: -5rem;
-        left: -1rem; 
-        z-index: 3;
+        top: 0;
+        right: 0; 
+        transform: translateX(-80%);
+        width: 46vw;
       }   
     }
+
+    &__shape {
+      position: absolute;
+      top: -6rem;
+      right: -15rem;
+      width: 60rem;
+
+      @media (max-width: 768px) {
+        top: -4vw;
+        right: 15%;
+        width: 24rem;
+     }
+  }
+
 
     &__title {
         z-index: 1;
@@ -104,21 +131,9 @@
       @media (max-width: 768px) {
         width: 96%;
         font-size: 1.6rem;
+        word-spacing: 0.1rem;
       }
     }
-
-    &__shape {
-      position: absolute;
-      top: 64rem;
-      right: -10rem;
-      width: 50rem;
-
-      @media (max-width: 768px) {
-        top: 34rem;
-        right: 5rem;
-        width: 26rem;
-      }
-  }
 
   .vibrant {
     color: $green;

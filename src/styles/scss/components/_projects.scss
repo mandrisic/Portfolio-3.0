@@ -103,6 +103,7 @@
             flex-wrap: wrap;
             color: $white;
             font-size: 1.4rem;
+            padding: 0 .5rem;
         }
 
         &__link {
@@ -112,6 +113,10 @@
             font-size: 1.4rem;
             cursor: pointer;
             color: $white;
+
+            @media (max-width: 768px) {
+                padding: .5rem 1.2rem;
+              }
 
             &:hover {
                 border-color: $green;

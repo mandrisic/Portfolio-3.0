@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import projectsData from './projectsData';
 
 const Projects = () => {
-
   const [activeCard, setActiveCard] = useState(null);
 
   const handleCardClick = (index) => {

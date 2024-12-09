@@ -38,13 +38,20 @@ img {
 
 #intro {
     @media (max-width: 768px) {
-        scroll-margin-top: 4rem;
+        scroll-margin-top: 0rem;
     }
 }
 
 #projects {
     @media (max-width: 768px) {
         scroll-margin-top: 0rem;
+    }
+}
+
+#experience {
+    scroll-margin-top: 4rem;
+    @media (max-width: 768px) {
+        scroll-margin-top: -1rem;
     }
 }
 
@@ -62,11 +69,4 @@ img {
         background-color: $night;
         border: .1rem solid #5d5857;
     }
-  }
-
-  .app {
-    position: relative;
-    overflow: hidden;
-    overflow-x: hidden;
-    width: 100%;
   }

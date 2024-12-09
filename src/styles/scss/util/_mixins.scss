@@ -21,13 +21,6 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin svgShape ($width, $top, $left, $transform){
-    width: $width;
-    top: $top;
-    left: $left;
-    transform: $transform;
-}
-
 @mixin animate($animation,$duration,$method,$times){
     animation: $animation $duration $method $times;
 }
